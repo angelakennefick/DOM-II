@@ -1,6 +1,6 @@
 
 const logo = document.querySelector(".logo-heading");
-logo.addEventListener('mouseover', () =>{
+logo.addEventListener('focus', () =>{
 document.body.style.background = 'salmon'
 });
 
@@ -16,13 +16,13 @@ logo.addEventListener('dblclick', () =>{
 
 // 4
 const intro = document.querySelector(".intro");
-intro.addEventListener('mouseover', () =>{
+intro.addEventListener('keydown', () =>{
     document.body.style.cursor = "crosshair";
     });
     
 // 5
 const contentSection = document.querySelector(".content-section");
-contentSection.addEventListener('mouseover', () => {
+contentSection.addEventListener('wheel', () => {
  document.body.style.cursor = "pointer";
 });  
     
@@ -39,20 +39,24 @@ navLinks[0].addEventListener('mouseover', () => {
    });  
 
 // 8
-navLinks[1].addEventListener('mouseover', () => {
+navLinks[1].addEventListener('select', () => {
     navLinks[1].style.transform ="rotate(90deg)"
    });  
 // 9
-navLinks[2].addEventListener('mouseover', () => {
+navLinks[2].addEventListener('pointermove', () => {
     navLinks[2].style.transform ="scale(5, 10)"
    });  
 // 10
-navLinks[3].addEventListener('mouseover', () => {
+navLinks[3].addEventListener('scroll', () => {
     navLinks[3].style.transform ="translate(50px, 100px)"
    });  
 
 
-
+// event prop + prevent default
+navLinks.forEach(a => {
+    a.stopPropagation();
+    a.preventDefault();
+});
     
     
  
